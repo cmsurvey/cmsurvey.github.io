@@ -6,15 +6,46 @@
   <title>JS Bin</title>
 </head>
 <body>
+<style>
+  element.style {
+}
+body {
+    background: #424244;
+}
+a {
+    left: 45%;
+    position: absolute;
+    top: 50%;
+    text-decoration: none;
+    color: white;
+    background: #212121;
+    padding: 10px;
+    border-radius: 5px;
+}
+user agent stylesheet
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+</style>
 <script>
-  urls = ['https://www.surveymonkey.com/r/7J222YT','https://www.surveymonkey.com/r/7J2XD3C', 'https://www.surveymonkey.com/r/7J2Z99V', 'https://www.surveymonkey.com/r/7JCYVX6'];
-  var urlIndex = 0;
+  urlsSp = ['https://www.surveymonkey.com/r/7J222YT','https://www.surveymonkey.com/r/7J2XD3C', 'https://www.surveymonkey.com/r/7J2Z99V', 'https://www.surveymonkey.com/r/7JCYVX6'];
+  urlsEn = ['https://www.google.com', 'https://mail.google.com/mail/u/0/', 'https://www.google.com/imghp?hl=en', 'https://www.google.com/maps'];
+  
+  var myrandom=Math.round(Math.random()*3);
 
-function openUrl(){
-  url = urls[urlIndex % urls.length];
+function openUrlSp(){
+  url = urlsSp[myrandom];
+  window.location = url;
+}
+
+function openUrlEn(){
+  url = urlsEn[myrandom];
   window.location = url;
 }
   </script>
-  <a href="javascript:openUrl()">Take me to the survey!</a>
+  <a href="javascript:openUrlEn()">Take me to the survey! (English)</a>
+  <a href="javascript:openUrlSp()">Llevame a la encuesta! (Español)</a>
 </body>
 </html>
